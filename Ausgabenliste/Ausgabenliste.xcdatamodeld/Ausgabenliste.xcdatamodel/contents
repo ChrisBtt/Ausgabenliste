@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="16A312a" minimumToolsVersion="Automatic">
+    <entity name="Monat" representedClassName=".Monat" syncable="YES">
+        <attribute name="ausgaben" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Rechnungen" inverseName="ubersicht" inverseEntity="Rechnungen" syncable="YES"/>
+    </entity>
+    <entity name="Rechnungen" representedClassName=".Rechnungen" syncable="YES">
+        <attribute name="betrag" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="datum" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="verwendung" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ubersicht" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Monat" inverseName="details" inverseEntity="Monat" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Monat" positionX="675" positionY="-693" width="128" height="88"/>
+        <element name="Rechnungen" positionX="837" positionY="-675" width="128" height="103"/>
+    </elements>
+</model>
